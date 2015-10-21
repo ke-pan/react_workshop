@@ -1,6 +1,11 @@
 # 初尝，写一些组件
 
+## 通过两个组件初步认识 React
 - hello world
 - dropdown menu
 
-通过两个组件初步认识 React
+
+## Concepts
+- createClass, render
+- props, state
+- events, onXXX

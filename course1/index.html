@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>course1</title>
+    <script src="http://cdn.bootcss.com/react/0.13.3/react.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.25/browser.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"> </div>
+      <div class="dropdown"> </div>
+      <script type="text/babel">
+        const Header = React.createClass({
+          render() {
+            return <h1 className={this.props.xxx}>Hello World</h1>
+          }
+        })
+
+        const ListItem = React.createClass({
+          render() {
+            return <li className={this.props.selected ? "active" : ''} onClick={this.handleClick}><a href="#">{this.props.title}</a></li>
+          },
+          handleClick() {
+            this.props.onClick(this.props.title)
+          }
+        })
+
+        const DropDown = React.createClass({
+          getInitialState() {
+            return {
+              title: this.props.title,
+              open: false
+            }
+          },
+          render() {
+            const list = this.props.contents.map(
+              e => <ListItem selected={this.state.title == e} title={e} onClick={this.handleItemClick}/>
+            )
+            return <div className={"btn-group " + (this.state.open ? "open" : '')}>
+              <button
+                type="button"
+                className="btn btn-default dropdown-toggle"
+                onClick={this.handleClick}
+              >
+                {this.state.title} <span className="caret"></span>
+              </button>
+              <ul className="dropdown-menu">
+                {list}
+              </ul>
+            </div>
+          },
+          handleClick() {
+            this.setState({
+              open: !this.state.open
+            })
+          },
+          handleItemClick(newTitle) {
+            this.setState({
+              open: false,
+              title: newTitle
+            })
+          }
+        })
+
+        React.render(<Header xxx="text-info"/>, document.querySelector('.header'))
+        React.render(<DropDown title="fruits" contents={['apple', 'banana', 'orange']}/>, document.querySelector('.dropdown'))
+      </script>
+    </div>
+  </body>
+</html>
