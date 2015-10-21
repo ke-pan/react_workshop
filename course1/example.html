@@ -38,7 +38,7 @@
           }
         },
         render() {
-          const list = fruits.map(fruit => <ListItem itemTitle={fruit} onClick={this.handleItemClick} select={this.state.title == fruit}/>)
+          const list = this.props.contents.map(fruit => <ListItem itemTitle={fruit} onClick={this.handleItemClick} select={this.state.title == fruit}/>)
           return <div className={"btn-group " + (this.state.open ? 'open' : '')}>
             <button
               type="button"
@@ -65,7 +65,7 @@
         }
       })
       React.render(<Header class='text-danger'/>, document.querySelector('.header'))
-      React.render(<Dropdown title='fruit'/>, document.querySelector('.content'))
+      React.render(<Dropdown title='fruit' contents={["apple", "banana", "orange"]}/>, document.querySelector('.content'))
     </script>
   </body>
 </html>
