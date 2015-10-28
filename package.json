@@ -1,0 +1,36 @@
+{
+  "name": "react_workshop",
+  "version": "1.0.0",
+  "description": "Baozou react workshop",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ke-pan/react_workshop.git"
+  },
+  "keywords": [
+    "react",
+    "workshop"
+  ],
+  "author": "ke-pan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ke-pan/react_workshop/issues"
+  },
+  "homepage": "https://github.com/ke-pan/react_workshop",
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.30",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.21.0",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
