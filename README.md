@@ -25,3 +25,6 @@
 - 接受讲者是一个菜鸟
 - 一些时间
 - 一台装有 node 的电脑
+
+## refs
+- [udemy](udemy.com/learn-and-understand-reactjs/)
