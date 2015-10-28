@@ -2,7 +2,11 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: [
+    'webpack/hot/dev-server',
+    'webpack-dev-server/client?http://localhost:8080',
+    path.resolve(__dirname, './src/index.js')
+  ],
   output: {
     path: path.resolve(__dirname, './build'),
     publicPath: 'build/',
@@ -15,6 +19,7 @@ module.exports = {
     //       warnings: false
     //   }
     // })
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     loaders: [
